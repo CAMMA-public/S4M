@@ -3,7 +3,7 @@
 
 _Adrien Meyer, Lorenzo Arboit, Giuseppe Massimiani, Shih-Min Yin, Didier Mutter, Nicolas Padoy_
 
-[![arXiv](https://img.shields.io/badge/arxiv-2307.15220-red)](https://arxiv.org/abs/2503.05534)
+[![arXiv](https://img.shields.io/badge/arxiv-2503.05534-red)](https://arxiv.org/abs/2503.05534)
 
 This article will be presented at IPCAI 2026, Nagoya, Japan
 
