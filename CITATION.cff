@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use S4M, please cite the paper below."
+title: "S4M: 4-points to Segment Anything"
+type: software
+authors:
+  - family-names: "Meyer"
+    given-names: "Adrien"
+  - family-names: "Arboit"
+    given-names: "Lorenzo"
+  - family-names: "Massimiani"
+    given-names: "Giuseppe"
+  - family-names: "Yin"
+    given-names: "Shih-Min"
+  - family-names: "Mutter"
+    given-names: "Didier"
+  - family-names: "Padoy"
+    given-names: "Nicolas"
+repository-code: "https://github.com/CAMMA-public/S4M"
+url: "https://github.com/CAMMA-public/S4M"
+
+preferred-citation:
+  type: article
+  title: "S4M: 4-points to Segment Anything"
+  authors:
+    - family-names: "Meyer"
+      given-names: "Adrien"
+    - family-names: "Arboit"
+      given-names: "Lorenzo"
+    - family-names: "Massimiani"
+      given-names: "Giuseppe"
+    - family-names: "Yin"
+      given-names: "Shih-Min"
+    - family-names: "Mutter"
+      given-names: "Didier"
+    - family-names: "Padoy"
+      given-names: "Nicolas"
+  journal: "arXiv preprint arXiv:2503.05534"
+  year: 2025
+  url: "https://arxiv.org/abs/2503.05534"
