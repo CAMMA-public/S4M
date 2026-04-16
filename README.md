@@ -8,8 +8,16 @@ _Adrien Meyer, Lorenzo Arboit, Giuseppe Massimiani, Shih-Min Yin, Didier Mutter,
 
 This article will be presented at IPCAI 2026, Nagoya, Japan
 
-![majorMinor](assets/majorMinorPoint.png)
-
+<table align="center">
+  <tr>
+    <td valign="middle" align="center" width="60%">
+      <img src="assets/majorMinorPoint.png" alt="majorMinor" width="100%">
+    </td>
+    <td valign="middle" align="center" width="34%">
+      <img src="assets/S4M_MMOTU_prompt_demo_labeled.gif" alt="S4M demo gif" width="100%">
+    </td>
+  </tr>
+</table>
 
 S4M prompts SAM using only four points: the endpoints of the major and minor axes, inspired by sonographic measurements. We refer to these as the **major/minor points**.
 A **Canvas** auxiliary task helps the model learn the relationships between these points and encode shape.
