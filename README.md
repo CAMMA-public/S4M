@@ -4,10 +4,16 @@
 _Adrien Meyer, Lorenzo Arboit, Giuseppe Massimiani, Shih-Min Yin, Didier Mutter, Nicolas Padoy_
 
 [![arXiv](https://img.shields.io/badge/arxiv-2503.05534-red)](https://arxiv.org/abs/2503.05534v3)
+[![GitHub stars](https://img.shields.io/github/stars/CAMMA-public/S4M?style=social)](https://github.com/CAMMA-public/S4M/stargazers)
 
 This article will be presented at IPCAI 2026, Nagoya, Japan
 
 ![majorMinor](assets/majorMinorPoint.png)
+
+
+S4M prompts SAM using only four points: the endpoints of the major and minor axes, inspired by sonographic measurements. We refer to these as the **major/minor points**.
+A **Canvas** auxiliary task helps the model learn the relationships between these points and encode shape.
+S4M is designed for medical image segmentation, with examples on ultrasound and endoscopic surgery data.
 
 ## Install
 <details>
@@ -79,14 +85,14 @@ mim test mmdet S4M/configs/S4M/mmotu_majmin.py --checkpoint mmotu_majmin.pth --c
 <details>
 <summary>Click to expand Custom training</summary>
 
-Lets download a small custom dataset in ```./data```, "balloons"
+Let's download a small custom dataset in ```./data```, "balloons"
 
 ```bash
 python S4M/tools/dl_balloons.py
 ```
 
 
-Lets finetune S4M. We modify the training config inline. You can also create a custom config file instead.
+Let's finetune S4M. We modify the training config inline. You can also create a custom config file instead.
 ```bash
 export PYTHONPATH=$PYTHONPATH:.
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
@@ -121,7 +127,7 @@ mim train mmdet S4M/configs/S4M/endoscapes_majmin.py \
     param_scheduler.1.milestones="[100,150]"
 ```
 
-Lets test the model!
+Let's test the model!
 ```bash
 CKPT=$(cat work_dir/balloon_train/last_checkpoint)
 
@@ -143,9 +149,9 @@ mim test mmdet S4M/configs/S4M/endoscapes_majmin.py \
 
 </details>
 
-## References
+## Citation
 
-If you find our work helpful for your research, please consider citing us using the following BibTeX entry:
+If you find our work helpful for your research, please consider starring the repository ⭐ and citing our paper using the following BibTeX entry:
 
 ```bibtex
 @article{meyer2025s4m,
