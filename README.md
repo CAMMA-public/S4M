@@ -161,11 +161,13 @@ mim test mmdet S4M/configs/S4M/endoscapes_majmin.py \
 If you find our work helpful for your research, please consider starring the repository ⭐ and citing our paper using the following BibTeX entry:
 
 ```bibtex
-@article{meyer2025s4m,
-  title={S4M: 4-points to Segment Anything},
+@article{meyer2026s4m,
+  title={S4M: 4-points to segment anything},
   author={Meyer, Adrien and Arboit, Lorenzo and Massimiani, Giuseppe and Yin, Shih-Min and Mutter, Didier and Padoy, Nicolas},
-  journal={arXiv preprint arXiv:2503.05534},
-  year={2025}
+  journal={International Journal of Computer Assisted Radiology and Surgery},
+  pages={1--9},
+  year={2026},
+  publisher={Springer}
 }
 
 ```
