@@ -20,7 +20,7 @@ url: "https://github.com/CAMMA-public/S4M"
 
 preferred-citation:
   type: article
-  title: "S4M: 4-points to Segment Anything"
+  title: "S4M: 4-points to segment anything"
   authors:
     - family-names: "Meyer"
       given-names: "Adrien"
@@ -34,6 +34,8 @@ preferred-citation:
       given-names: "Didier"
     - family-names: "Padoy"
       given-names: "Nicolas"
-  journal: "arXiv preprint arXiv:2503.05534"
-  year: 2025
-  url: "https://arxiv.org/abs/2503.05534"
+  journal: "International Journal of Computer Assisted Radiology and Surgery"
+  year: 2026
+  date-published: "2026-05-17"
+  doi: "10.1007/s11548-026-03689-x"
+  url: "https://doi.org/10.1007/s11548-026-03689-x"
