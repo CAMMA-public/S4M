@@ -6,6 +6,7 @@ _Adrien Meyer, Lorenzo Arboit, Giuseppe Massimiani, Shih-Min Yin, Didier Mutter,
 [![arXiv](https://img.shields.io/badge/arxiv-2503.05534-red)](https://arxiv.org/abs/2503.05534) [![IJCARS](https://img.shields.io/badge/IJCARS-paper-blue)](https://link.springer.com/article/10.1007/s11548-026-03689-x)
 
 This article will be presented at IPCAI 2026, Nagoya, Japan
+> 🚨 **NEW:** We added an interative demo and a checkpoint pretrained on a large scale ultrasound dataset!
 
 <table align="center">
   <tr>
@@ -58,10 +59,69 @@ pip install scikit-learn scikit-image
 ```
 
 Download the pretrained checkpoints, endoscapes (endoscopic surgery) and mmotu (ultrasound)
+
+UltraS4M is pretrained on the US-43d dataset from ![UltraSam](https://github.com/CAMMA-public/UltraSam).
 ```bash
 wget -O ./endoscapes_majmin.pth "https://s3.unistra.fr/camma_public/github/S4M/endoscapes_majmin.pth"
 wget -O ./mmotu_majmin.pth "https://s3.unistra.fr/camma_public/github/S4M/mmotu_majmin.pth"
+wget -O ./UltraS4M_majmin.pth "https://s3.unistra.fr/camma_public/github/S4M/UltraS4M_majmin.pth"
 ```
+</details>
+
+## Interactive demo
+<details>
+<summary>Click to expand Interactive demo</summary>
+
+The interactive demo lets you segment one image from user-provided prompts in a GUI, without a ground-truth annotation file.
+
+```bash
+export PYTHONPATH=$PYTHONPATH:.
+export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
+
+python demo_s4m_interactive.py
+```
+
+The first four clicks define two pairs of major/minor points. The demo draws the two lines, assigns the longer pair as the major axis and the shorter pair as the minor axis, then runs S4M. After the first mask, select a correction type with the Positive/Negative checkboxes, click correction points, and use `Segment / Update` to run S4M again.
+
+All CLI options are optional:
+
+```bash
+python demo_s4m_interactive.py \
+  --image sample_dataset/sample_images/test.MMOTU_2d__00003.png \
+  --config S4M/configs/S4M/mmotu_majmin.py \
+  --checkpoint UltraS4M_majmin.pth \
+  --device cpu
+```
+
+Use a custom image:
+
+```bash
+python demo_s4m_interactive.py \
+  --image /path/to/image.png
+```
+
+Use another config/checkpoint pair, for example Endoscapes:
+
+```bash
+python demo_s4m_interactive.py \
+  --image /path/to/image.png \
+  --config S4M/configs/S4M/endoscapes_majmin.py \
+  --checkpoint endoscapes_majmin.pth
+```
+
+Run on GPU when CUDA is available:
+
+```bash
+python demo_s4m_interactive.py \
+  --device cuda:0
+```
+
+Options:
+- `--image`: image path to open in the demo.
+- `--config`: S4M config used to build the model and image transforms.
+- `--checkpoint`: model checkpoint to load.
+- `--device`: inference device, for example `cpu` or `cuda:0`.
+
 </details>
 
 ## Testing the model (ultrasound)
